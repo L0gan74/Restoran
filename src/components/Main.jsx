@@ -29,7 +29,7 @@ function Main() {
       .then((arr) => {
         setItems(arr);
       });
-  }, [onChangeCategory]);
+  }, []);
 
   const categoryId = useSelector((state) => state.filter.categoryId);
 
