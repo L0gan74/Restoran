@@ -19,19 +19,20 @@ function Main() {
   const onChangeCategory = (id) => {
     dispatch(setCategoryId(id));
   };
+  const categoryId = useSelector((state) => state.filter.categoryId);
 
   React.useEffect(() => {
     fetch(
-      `https://636a511eb10125b78fd775d2.mockapi.io/restoran?category=` + categoryId)
+      `https://636a511eb10125b78fd775d2.mockapi.io/restoran?category=` +
+        categoryId
+    )
       .then((res) => {
         return res.json();
       })
       .then((arr) => {
         setItems(arr);
       });
-  }, []);
-
-  const categoryId = useSelector((state) => state.filter.categoryId);
+  }, [categoryId]);
 
   return (
     <SearchContext.Provider value={{ count, setCount, item, setItems }}>

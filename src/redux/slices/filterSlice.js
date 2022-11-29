@@ -5,7 +5,7 @@ const initialState = {
 };
 
 const filterSlice = createSlice({
-  name: "filer",
+  name: "filers",
   initialState,
   reducers: {
     setCategoryId(state, action) {
