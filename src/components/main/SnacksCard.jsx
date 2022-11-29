@@ -23,7 +23,7 @@ function SnacksCard({ id, name, title, price, urlImg, weight }) {
           <div className="snacks-card_description-top">
             <p className="snacks-card_description-top_name">{name}</p>
             <p className="snacks-card_description-top_weight">
-              Вес: {weight} г
+              Вfес: {weight} г
             </p>
           </div>
           <p className="snacks-card_description-txt">{title}</p>
