@@ -3,14 +3,31 @@ import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import { SearchContext } from "../Main";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem } from "../../redux/slices/cartSlice";
 
 import cardBtn from "../../assets/card-btn.svg";
 import minus from "../../assets/minus.svg";
 import plus from "../../assets/plus.svg";
 
 function SnacksCard({ id, name, title, price, urlImg, weight }) {
-  const { count, setCount } = React.useContext(SearchContext);
+  const dispatch = useDispatch();
+  const cartItem = useSelector((state) =>
+    state.cart.items.find((obj) => obj.id == id)
+  );
+
+  const addedCount = cartItem ? cartItem.count : 0;
+
+  const onClickAdd = () => {
+    const item = {
+      id,
+      name,
+      title,
+      price,
+      urlImg
+    };
+    dispatch(addItem(item));
+  };
 
   return (
     <div className="container">
@@ -18,12 +35,12 @@ function SnacksCard({ id, name, title, price, urlImg, weight }) {
         <Link to={`/card/${id}`}>
           <img className="snacks-card_img" src={urlImg} alt="card" />
         </Link>
-        <span className="amount">{count}</span>
+        <span className="amount">{addedCount > 0 && <i>{addedCount}</i>}</span>
         <div className="snacks-card_description">
           <div className="snacks-card_description-top">
             <p className="snacks-card_description-top_name">{name}</p>
             <p className="snacks-card_description-top_weight">
-              Вfес: {weight} г
+              Вес: {weight} г
             </p>
           </div>
           <p className="snacks-card_description-txt">{title}</p>
@@ -31,7 +48,6 @@ function SnacksCard({ id, name, title, price, urlImg, weight }) {
             <button
               type="button"
               className="snacks-card_description-bottom_add"
-              onClick={() => setCount(count - 1)}
             >
               <img src={minus} alt="" />
             </button>
@@ -39,6 +55,7 @@ function SnacksCard({ id, name, title, price, urlImg, weight }) {
             <button
               type="button"
               className="snacks-card_description-bottom_btn"
+              onClick={onClickAdd}
             >
               В корзину
               <img src={cardBtn} alt="" />
@@ -46,7 +63,6 @@ function SnacksCard({ id, name, title, price, urlImg, weight }) {
             <button
               type="button"
               className="snacks-card_description-bottom_plus"
-              onClick={() => setCount(count + 1)}
             >
               <img src={plus} alt="" />
             </button>

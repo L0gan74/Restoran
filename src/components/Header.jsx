@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React from "react";
-import { SearchContext } from "./Main";
+import { useSelector } from "react-redux";
 
 import Modal from "./Modal";
 
@@ -12,9 +12,11 @@ import calling from "../assets/Calling.svg";
 import burgerBasket from "../assets/burger-basket.svg";
 
 function Header() {
-  const [modal, setModal] = React.useState(true);
-  //const { count, setCount } = React.useContext(SearchContext);
+  const { items } = useSelector((state) => state.cart);
 
+  const totalCount = items.reduce((sum, item) => sum + item.count, 0);
+
+  const [modal, setModal] = React.useState(true);
   return (
     <header>
       <div className="container">
@@ -47,7 +49,7 @@ function Header() {
               <button className="nav-basket" onClick={() => setModal(true)}>
                 <p>Корзина</p>
                 <span className="nav-basket_otd"></span>
-                <span className="nav-basket_amount">{/* {count}*/} </span>
+                <span className="nav-basket_amount">{totalCount} </span>
               </button>
             </Link>
             <div className="nav-basket_adp">

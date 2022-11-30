@@ -1,14 +1,18 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 import back from "../../assets/back.svg";
 import snacks from "../../assets/snacks.png";
-import plus from "../../assets/plus.svg";
-import minus from "../../assets/minus.svg";
-import delet from "../../assets/delete.svg";
 import add from "../../assets/add.svg";
 
+import DeliveryItem from "./DeliveryItem";
+
 function Delievery() {
+  const { totalPrice } = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  const items = useSelector((state) => state.cart.items);
+
   return (
     <section className="delievery">
       <div className="container">
@@ -25,48 +29,11 @@ function Delievery() {
           <p>(в корзине 3 товара)</p>
         </div>
         <div className="delievery-basket">
-          <div className="delievery-basket_card">
-            <div className="delievery-basket_card-left">
-              <img src={snacks} alt="" />
-              <div className="delievery-basket_card-txt">
-                <p className="delievery-basket_card-txt_name">
-                  ПИЦЦА ДВОЙНАЯ ПЕППЕРОНИ
-                </p>
-                <p className="delievery-basket_card-txt_description">
-                  Кальмары, мидии, креветки, сыр маасдам, красный лук, микс
-                  оливок, базилик, соус песто
-                </p>
-              </div>
-            </div>
-            <div className="delievery-basket_card-right">
-              <p className="delievery-basket_card-txt_name-adp">
-                {" "}
-                ПИЦЦА ДВОЙНАЯ ПЕППЕРОНИ
-              </p>
-              <div className="delievery-basket_card-amount">
-                <button
-                  className="delievery-basket_card-amount_add"
-                  type="button"
-                >
-                  <img src={plus} />
-                </button>
-                <p>1</p>
-                <button
-                  className="delievery-basket_card-amount_down"
-                  type="button"
-                >
-                  <img src={minus} />
-                </button>
-              </div>
-              <div className="delievery-basket_card-price">
-                <p>1640 ₽</p>
-              </div>
-              <button className="delievery-basket_card-delete">
-                <img src={delet} alt="" />
-              </button>
-            </div>
+          <div className="separation-delievery">
+            {items.map((item) => (
+              <DeliveryItem key={item.id} {...item} />
+            ))}
           </div>
-          <div className="separation-delievery"></div>
         </div>
         <div className="suggestions">
           <div className="container">
@@ -131,7 +98,7 @@ function Delievery() {
         <div className="decor">
           <div className="decor-total">
             <p className="decor-total_price">
-              Итого: <span>500 ₽</span>
+              Итого: <span>{totalPrice} ₽</span>
             </p>
             <p className="decor-total_delivery">
               До бесплатной доставки не хватет:<span> 100 ₽</span>

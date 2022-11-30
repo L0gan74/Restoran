@@ -394,21 +394,7 @@ nav {
   z-index: 1;
 }
 
-.snacks-card:hover .amount {
-  display: block;
-}
 
-.snacks-card:hover .snacks-card_description-bottom_add {
-  display: block;
-}
-
-.snacks-card:hover .snacks-card_description-bottom_btn {
-  display: none;
-}
-
-.snacks-card:hover .snacks-card_description-bottom_plus {
-  display: block;
-}
 
 .amount {
   height: 50px;
@@ -425,7 +411,6 @@ nav {
   color: #ffffff;
   text-align: center;
   padding-top: 12px;
-  display: none;
 }
 
 .snacks-card_description-bottom_add,
