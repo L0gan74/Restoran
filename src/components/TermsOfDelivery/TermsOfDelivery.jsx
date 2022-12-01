@@ -95,8 +95,8 @@ function TermsOfDelivery() {
                 <span>с 10:00-21:00</span>
               </div>
               <div className="contact-description_time-work">
-                <p>График работы доставки:</p>
-                <span>с 10:00-21:00</span>
+                <p>График работы кафе:</p>
+                <span>с 8:00-21:00</span>
               </div>
             </div>
             <div className="contact-description_order">
