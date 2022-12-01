@@ -17,7 +17,7 @@ function Header() {
   const totalCount = items.reduce((sum, item) => sum + item.count, 0);
 
   const [modal, setModal] = React.useState(true);
-  
+
   return (
     <header>
       <div className="container">
@@ -25,7 +25,7 @@ function Header() {
         <div className="header-block">
           <nav>
             <div className="burger-menu">
-              <BurgerMenu right  isOpen={ true } pageWrapId={"page-wrap"}/>
+              <BurgerMenu right isOpen={true} pageWrapId={"page-wrap"} />
             </div>
             <div id="page-wrap" className="nav-navigation">
               <Link to="/">
@@ -54,7 +54,9 @@ function Header() {
               </button>
             </Link>
             <div className="nav-basket_adp">
-              <img src={burgerBasket} alt="burger-basket" />
+              <Link to="/Delievery">
+                <img src={burgerBasket} alt="burger-basket" />
+              </Link>
             </div>
           </nav>
           <div className="qefqef">
