@@ -55,6 +55,7 @@ function Header() {
             </Link>
             <div className="nav-basket_adp">
               <Link to="/Delievery">
+                <b>{totalCount}</b>
                 <img src={burgerBasket} alt="burger-basket" />
               </Link>
             </div>
