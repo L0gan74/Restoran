@@ -860,6 +860,7 @@ footer {
   }
   .logo {
     margin-right: 0;
+    display: none;
   }
   .qefqef {
     padding-top: 7px;
@@ -1803,4 +1804,76 @@ main {
     font-size: 18px;
     line-height: 25px;
   }
+}
+
+.bm-burger-button {
+  width: 37px;
+  height: 37px;
+  background-image: url('../assets/burger-menu.svg');
+}
+
+.bm-burger-bars {
+  background: #373a47;
+}
+
+.bm-burger-bars-hover {
+  background: #a90000;
+}
+
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.bm-cross {
+  background: #bdc3c7;
+}
+
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+  width: 300px !important;
+}
+
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+  display: block;
+}
+
+.bm-item-list a{
+  font-family: 'Gilroy';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+color: #FFFFFF;
+text-decoration: none;
+padding-bottom: 15px;
+}
+
+.bm-item {
+  display: inline-block;
+}
+
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  left: 0;
+  top: 0;
+}
+
+.burger-menu__comp{
+  display: flex;
 }

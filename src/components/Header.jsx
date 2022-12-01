@@ -3,9 +3,9 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import Modal from "./Modal";
+import BurgerMenu from "./BurgerMenu/BurgerMenu";
 
 import logo from "../assets/LOGOS.svg";
-import burgerMenu from "../assets/burger-menu.svg";
 import location from "../assets/Location.svg";
 import search from "../assets/Search.svg";
 import calling from "../assets/Calling.svg";
@@ -17,6 +17,7 @@ function Header() {
   const totalCount = items.reduce((sum, item) => sum + item.count, 0);
 
   const [modal, setModal] = React.useState(true);
+  
   return (
     <header>
       <div className="container">
@@ -24,9 +25,9 @@ function Header() {
         <div className="header-block">
           <nav>
             <div className="burger-menu">
-              <img className="burger-menu" src={burgerMenu} alt="burger-menu" />
+              <BurgerMenu right  isOpen={ true } pageWrapId={"page-wrap"}/>
             </div>
-            <div className="nav-navigation">
+            <div id="page-wrap" className="nav-navigation">
               <Link to="/">
                 <img className="logo" src={logo} alt="logo" />
               </Link>
