@@ -16,7 +16,7 @@ function Footer() {
               <img src={logo} alt="logo" />
             </Link>
             <p className="termsofuse">
-              © ООО СК «АПШЕРОН» Все права защищены. 2010-2020
+              © L0gan74
             </p>
             <ul>
               <li>Пользовательское соглашение</li>
