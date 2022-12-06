@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import React from "react";
 import { useSelector } from "react-redux";
 
-import Modal from "./Modal";
+
 import BurgerMenu from "./BurgerMenu/BurgerMenu";
 
 import logo from "../assets/LOGOS.svg";
@@ -16,12 +16,12 @@ function Header() {
 
   const totalCount = items.reduce((sum, item) => sum + item.count, 0);
 
-  const [modal, setModal] = React.useState(true);
+  
 
   return (
     <header>
       <div className="container">
-        {modal && <Modal setModal={setModal} />}
+     
         <div className="header-block">
           <nav>
             <div className="burger-menu">
@@ -47,7 +47,7 @@ function Header() {
               </div>
             </div>
             <Link to="/Delievery">
-              <button className="nav-basket" onClick={() => setModal(true)}>
+              <button className="nav-basket">
                 <p>Корзина</p>
                 <span className="nav-basket_otd"></span>
                 <span className="nav-basket_amount">{totalCount} </span>
