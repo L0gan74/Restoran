@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import products1 from "../../assets/description_1.svg";
 import products2 from "../../assets/descripton_2.svg";
 import products3 from "../../assets/descripton_3.svg";
@@ -20,7 +21,9 @@ function Description() {
               шатер с посадкой на 200 человек, сказочный детский домик и
               бассейн.
             </p>
+            <Link to="/">
             <button type="button">посмотреть меню</button>
+            </Link>
           </div>
           <div className="description-block_img">
             <div className="description-block_img-rectangle">

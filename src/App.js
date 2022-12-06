@@ -11,6 +11,7 @@ import NotFound from "./components/NotFound";
 import Card from "./components/Card";
 import Delievery from "./components/Delivery";
 import TermsOfDelivery from "./components/TermsOfDelivery/TermsOfDelivery";
+import Basket from "./components/Basket/Basket";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/delievery" element={<Delievery />} />
         <Route path="/card/:id" element={<Card />} />
         <Route path="/TermsOfDelivery" element={<TermsOfDelivery />} />
+        <Route path="/basket" element={<Basket />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

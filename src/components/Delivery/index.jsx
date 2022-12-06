@@ -26,7 +26,7 @@ function Delievery() {
         <div className="delievery-name">
           <span className="delievery-name_rectangle"></span>
           <h2>Холодные закуски</h2>
-          <p>(в корзине 3 товара)</p>
+          <p>(в корзине {totalPrice} товара)</p>
         </div>
         <div className="delievery-basket">
           <div className="separation-delievery">
@@ -108,7 +108,9 @@ function Delievery() {
             </p>
           </div>
           <div className="decor-btn">
-            <button type="button">Оформить заказ</button>
+            <Link to="/basket">
+              <button type="button">Оформить заказ</button>
+            </Link>
           </div>
         </div>
       </div>
