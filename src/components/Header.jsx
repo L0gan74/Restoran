@@ -40,17 +40,6 @@ function Header() {
                   <p className="contact-tel">Контакты:</p>
                   <p className="tel">+7 (917) 51-57-59</p>
                 </div>
-                <div className="header__actions-lang">
-                  <div className="dropdown dropdown-lang active">
-                    <img src="./img/img_news/lang.svg" alt="lang" />
-                    <button className="dropbtn__lang">EN</button>
-                    <div className="dropdown-content__lang">
-                      <span>EN</span>
-                      <span>RU</span>
-                      <span>DE</span>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
             <Link to="/Delievery">

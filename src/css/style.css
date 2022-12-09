@@ -2141,3 +2141,6 @@ main {
 .dropdown:hover .dropdown-content__lang {
   display: block;
 }
+.dropdown-content__lang span:hover {
+  background: #f2d082;
+}
