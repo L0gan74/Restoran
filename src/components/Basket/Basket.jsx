@@ -17,11 +17,37 @@ export const Basket = () => {
 
   let content = null;
 
+  let contentInp = null;
+
   if (show) {
     content = (
       <>
         <p>Доставим через 1 час 30 минут</p>
       </>
+    );
+
+    contentInp = (
+      <div className="address">
+        <p>Адрес доставки</p>
+        <div className="address-inpt">
+          <input
+            className="outside"
+            type="text"
+            placeholder="Укажите улицу*"
+            required
+          />
+          <input type="text" placeholder="Номер дома*" required />
+          <input
+            className="flat"
+            type="text"
+            placeholder="№ квартиры/офиса"
+            required
+          />
+          <input className="floor" type="text" placeholder="Подъезд" required />
+          <input className="floor" type="text" placeholder="Этаж" required />
+          <input className="comments" type="text" placeholder="Комментарий" />
+        </div>
+      </div>
     );
   }
 
@@ -42,8 +68,13 @@ export const Basket = () => {
         <form>
           <div className="contact-inforamtion form-back">
             <p>1. Контактная информация</p>
-            <input className="name" type="text" placeholder="Имя*" required/>
-            <input className="telefon" type="tel" placeholder="Телефон*" required/>
+            <input className="name" type="text" placeholder="Имя*" required />
+            <input
+              className="telefon"
+              type="tel"
+              placeholder="Телефон*"
+              required
+            />
           </div>
           <div className="delivery-form form-back">
             <p>2. Доставка</p>
@@ -62,17 +93,7 @@ export const Basket = () => {
               </ul>
               {content}
             </div>
-            <div className="address">
-                <p>Адрес доставки</p>
-                <div className="address-inpt">
-                    <input className="outside" type="text" placeholder="Укажите улицу*" required/>
-                    <input type="text" placeholder="Номер дома*" required/>
-                    <input className="flat" type="text" placeholder="№ квартиры/офиса" required/>
-                    <input className="floor" type="text" placeholder="Подъезд" required/>
-                    <input className="floor" type="text" placeholder="Этаж" required/>
-                    <input className="comments" type="text" placeholder="Комментарий"/>
-                </div>
-            </div>
+            {contentInp}
           </div>
           <div className="payment form-back">
             <p>3. Оплатить</p>
@@ -115,7 +136,7 @@ export const Basket = () => {
             </div>
           </div>
           <div className="formalization form-back">
-            <input type="checkbox"/>
+            <input type="checkbox" />
             <button>Оформить заказ</button>
           </div>
         </form>

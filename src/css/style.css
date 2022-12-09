@@ -2113,3 +2113,31 @@ main {
 .comments {
   width: 100%;
 }
+
+
+.dropdown-content__lang {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  z-index: 1;
+  border-radius: 10px;
+  top: 25px;
+  display: none;
+}
+
+
+.dropdown-content__lang span {
+  font-family: "Ubuntu";
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 40px;
+  color: #272727;
+  padding-left: 10px;
+  display: flex;
+  cursor: pointer;
+}
+.dropdown:hover .dropdown-content__lang {
+  display: block;
+}
