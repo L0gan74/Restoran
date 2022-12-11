@@ -16,7 +16,7 @@ function Snacks() {
         <div className="container">
           <div className="snacks-name">
             <span className="snacks-name_rectangle"></span>
-            <h2>Холодные закуски</h2>
+            <h2>Меню</h2>
           </div>
         </div>
         <div id="snacks" className="swiper mySwiper block-swiper">
@@ -51,6 +51,7 @@ function Snacks() {
           </Swiper>
         </div>
       </section>
+      
     </>
   );
 }
