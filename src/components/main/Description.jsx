@@ -3,6 +3,7 @@ import products1 from "../../assets/description_1.svg";
 import products2 from "../../assets/descripton_2.svg";
 import products3 from "../../assets/descripton_3.svg";
 import products4 from "../../assets/descripton_4.svg";
+import fon from "../../assets/description-img.png";
 
 function Description() {
   return (
@@ -43,6 +44,7 @@ function Description() {
               <p>Свежайшие продукты</p>
             </div>
           </div>
+          <img className="fon" src={fon} alt="fon"/>
         </div>
       </div>
     </section>

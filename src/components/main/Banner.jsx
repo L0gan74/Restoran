@@ -1,4 +1,5 @@
-import banner from '../../assets/banner-txt.png';
+import banner from "../../assets/banner-txt.png";
+import fonBanner from "../../assets/main.png";
 
 function Banner() {
   return (
@@ -8,6 +9,7 @@ function Banner() {
           <img src={banner} alt="" />
         </div>
       </div>
+      <img className="fonBanner" src={fonBanner} alt="fonBanner" />
     </section>
   );
 }
