@@ -22,7 +22,7 @@ function Description() {
               шатер с посадкой на 200 человек, сказочный детский домик и
               бассейн.
             </p>
-            <Link to="/">
+            <Link to="*">
             <button type="button">посмотреть меню</button>
             </Link>
           </div>
