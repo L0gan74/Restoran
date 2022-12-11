@@ -1,55 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import back from "../../assets/back.svg";
 
+import DeliveryInput from "./DeliveryInput";
+
 export const Basket = () => {
-  const typeBtn = ["Доставка", "Самовывоз"];
-  const paymentBtn = ["Оплата онлайн", "Курьеру картой", "Наличными"];
-  const deliveryBtn = ["В ближайшее время", "Ко времени"];
-  const [activeBtn, setActiveBtn] = React.useState(0);
-  const [payment, setPayment] = React.useState(0);
-  const [delivery, setDelivery] = React.useState(0);
-  const [show, setShow] = React.useState(true);
-
-  const clickShow = () => {
-    setShow(!show);
-  };
-
-  let content = null;
-
-  let contentInp = null;
-
-  if (show) {
-    content = (
-      <>
-        <p>Доставим через 1 час 30 минут</p>
-      </>
-    );
-
-    contentInp = (
-      <div className="address">
-        <p>Адрес доставки</p>
-        <div className="address-inpt">
-          <input
-            className="outside"
-            type="text"
-            placeholder="Укажите улицу*"
-            required
-          />
-          <input type="text" placeholder="Номер дома*" required />
-          <input
-            className="flat"
-            type="text"
-            placeholder="№ квартиры/офиса"
-            required
-          />
-          <input className="floor" type="text" placeholder="Подъезд" required />
-          <input className="floor" type="text" placeholder="Этаж" required />
-          <input className="comments" type="text" placeholder="Комментарий" />
-        </div>
-      </div>
-    );
-  }
+  const [isActive, setIsActive] = React.useState(true);
+  const [isActiveNal, setIsActiveNal] = React.useState(false);
+  const [isActiveDost, setIsActiveDost] = React.useState(false);
 
   return (
     <section className="basket">
@@ -79,51 +38,34 @@ export const Basket = () => {
           <div className="delivery-form form-back">
             <p>2. Доставка</p>
             <div className="delivery-form__buttons">
-              <ul>
-                {typeBtn.map((categoryBtn, i) => (
-                  <li key={i} onClick={() => setActiveBtn(i)}>
-                    <span
-                      className={activeBtn === i ? "activeBtn" : ""}
-                      onClick={clickShow}
-                    >
-                      {categoryBtn}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              {content}
+              <span className="activeBtn" onClick={() => setIsActive(true)}>
+                Доставка
+              </span>
+              <span onClick={() => setIsActive(false)}>Самовывоз</span>
+              {isActive ? <p>Доставим через 1 час 30 минут</p> : null}
             </div>
-            {contentInp}
+            {isActive ? <DeliveryInput /> : null}
           </div>
           <div className="payment form-back">
             <p>3. Оплатить</p>
             <div className="delivery-form__buttons">
-              <ul>
-                {paymentBtn.map((categoryBtn, i) => (
-                  <li key={i} onClick={() => setPayment(i)}>
-                    <span className={payment === i ? "activeBtn" : ""}>
-                      {categoryBtn}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              <span onClick={() => setIsActiveNal(false)}>Оплата онлайн</span>
+              <span onClick={() => setIsActiveNal(false)}>Курьеру картой</span>
+              <span onClick={() => setIsActiveNal(true)}>Наличными</span>
             </div>
-            <input tupe="text" placeholder="Сдача с" />
+            {isActiveNal ? <input tupe="text" placeholder="Сдача с" required /> : null}
           </div>
           <div className="when form-back">
             <p>4. Когда доставить</p>
             <div className="when-btn">
               <div className="when-btn__top">
-                <ul>
-                  {deliveryBtn.map((categoryBtn, i) => (
-                    <li key={i} onClick={() => setDelivery(i)}>
-                      <span className={delivery === i ? "activeBtn" : ""}>
-                        {categoryBtn}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <input tupe="text" placeholder="Сдача с" />
+                <span onClick={() => setIsActiveDost(false)}>
+                  В ближайшее время
+                </span>
+                <span onClick={() => setIsActiveDost(true)}>Ко времени</span>
+                {isActiveDost ? (
+                  <input tupe="text" placeholder="Укажите время"  required/>
+                ) : null}
               </div>
               <div className="persons">
                 <p>Кол-во персон</p>
@@ -133,11 +75,35 @@ export const Basket = () => {
                   <b>+</b>
                 </div>
               </div>
+              <p className="callback">Хотите мы позвоним?</p>
+              <div className="perezvon">
+                <div class="checkbox-wrapper">
+                  <label for="modern-checkbox"></label>
+                  <input type="checkbox" id="modern-checkbox" />
+                  <span></span>
+                </div>
+                <p>Не перезванивать</p>
+              </div>
+              <div className="perezvon">
+                <div class="checkbox-wrapper">
+                  <label for="modern-checkbox2"></label>
+                  <input type="checkbox" id="modern-checkbox2" />
+                  <span></span>
+                </div>
+                <p>Потребуется звонок оператора</p>
+              </div>
             </div>
           </div>
           <div className="formalization form-back">
-            <input type="checkbox" />
-            <button>Оформить заказ</button>
+            <div className="agreement">
+              <input type="checkbox" id="agreement" required/>
+              <label for="agreement"></label>
+              <p>
+                Я согласен на обработку моих перс. данных в соответствии с{" "}
+                <Link to="/TermsOfDelivery">Условиями</Link>
+              </p>
+            </div>
+              <button>Оформить заказ</button>
           </div>
         </form>
       </div>

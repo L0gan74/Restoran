@@ -12,24 +12,13 @@ function BurgerMenu() {
       <Link to="/" className="menu-item" href="/">
         О ресторане
       </Link>
-      <div className="header__actions-lang">
-                  <div className="dropdown dropdown-lang active">
-                    <img src="./img/img_news/lang.svg" alt="lang" />
-                    <button className="dropbtn__lang">EN</button>
-                    <div className="dropdown-content__lang">
-                      <span>EN</span>
-                      <span>RU</span>
-                      <span>DE</span>
-                    </div>
-                  </div>
-                </div>
       <Link to="/TermsOfDelivery" className="menu-item" href="/about">
         Условия доставки
       </Link>
       <Link to="/TermsOfDelivery" className="menu-item" href="/contact">
         Возврат товара
       </Link>
-      <Link onClick={showSettings} className="menu-item--small" href="">
+      <Link onClick={showSettings} className="menu-item--small" href="/stock">
         Акции
       </Link>
       <Link className="menu-item" href="/contact">

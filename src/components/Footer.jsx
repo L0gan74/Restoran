@@ -35,7 +35,7 @@ function Footer() {
               <Link to="/TermsOfDelivery">
                 <li>Возврат товара</li>
               </Link>
-              <Link to="*">
+              <Link to="/Stock">
                 <li>Акции</li>
               </Link>
             </ul>

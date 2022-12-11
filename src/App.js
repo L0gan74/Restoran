@@ -12,6 +12,7 @@ import Card from "./components/Card";
 import Delievery from "./components/Delivery";
 import TermsOfDelivery from "./components/TermsOfDelivery/TermsOfDelivery";
 import Basket from "./components/Basket/Basket";
+import Stock from "./components/Stock";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/card/:id" element={<Card />} />
         <Route path="/TermsOfDelivery" element={<TermsOfDelivery />} />
         <Route path="/basket" element={<Basket />} />
+        <Route path="/stock" element={<Stock />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

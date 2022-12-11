@@ -7,11 +7,17 @@ import snacks from "../../assets/snacks.png";
 import add from "../../assets/add.svg";
 
 import DeliveryItem from "./DeliveryItem";
+import Modal from "../Modal";
 
 function Delievery() {
   const { totalPrice } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const items = useSelector((state) => state.cart.items);
+  const totalCount = items.reduce((sum, item) => sum + item.count, 0);
+
+  if (!totalPrice) {
+    return <Modal />;
+  }
 
   return (
     <section className="delievery">
@@ -26,7 +32,7 @@ function Delievery() {
         <div className="delievery-name">
           <span className="delievery-name_rectangle"></span>
           <h2>Холодные закуски</h2>
-          <p>(в корзине {totalPrice} товара)</p>
+          <p>(в корзине {totalCount} товара)</p>
         </div>
         <div className="delievery-basket">
           <div className="separation-delievery">
@@ -99,12 +105,6 @@ function Delievery() {
           <div className="decor-total">
             <p className="decor-total_price">
               Итого: <span>{totalPrice} ₽</span>
-            </p>
-            <p className="decor-total_delivery">
-              До бесплатной доставки не хватет:<span> 100 ₽</span>
-            </p>
-            <p className="decor-total_minimal">
-              Минимальная сума заказа 1500 ₽
             </p>
           </div>
           <div className="decor-btn">
