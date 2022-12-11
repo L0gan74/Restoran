@@ -231,7 +231,7 @@ nav {
 /*banner*/
 
 .banner {
-  background-image: url("../assets/main.png");
+
   background-size: cover;
   background-repeat: no-repeat;
   height: 484px;
@@ -516,7 +516,7 @@ nav {
 }
 
 .description-block {
-  background-image: url("../assets/description-img.png");
+
   background-size: cover;
   display: flex;
   justify-content: space-between;
